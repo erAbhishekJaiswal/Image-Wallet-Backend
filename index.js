@@ -11,6 +11,10 @@ app.use(express.json());
 app.use('/uploads', express.static('uploads')); // Serve uploaded files
 app.use('/api/students', studentRoutes);
 
+app.get('/', (req, res) => {
+    res.send('API running');
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
