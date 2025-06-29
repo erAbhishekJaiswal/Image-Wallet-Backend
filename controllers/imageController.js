@@ -53,7 +53,7 @@ exports.createimages = async (req, res) => {
 
         res.json({ success: true, data: image });
     } catch (error) {
-        console.error('Image Upload Error:', error);
+        console.error('Image Upload Error:', error.message);
         res.status(400).json({ success: false, message: error.message });
 
         // Optional: try to clean up uploaded file in case of failure
